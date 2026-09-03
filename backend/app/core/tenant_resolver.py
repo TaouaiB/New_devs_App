@@ -90,7 +90,7 @@ class TenantResolver:
                     token,
                     settings.secret_key,
                     algorithms=["HS256"],
-                    options={"verify_signature": False}
+                    audience="authenticated"
                 )
                 tenant = TenantResolver.resolve_tenant_from_token(payload)
                 if tenant:
